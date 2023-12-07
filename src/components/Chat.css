@@ -1,0 +1,108 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Main chat container */
+  .MainContainer {
+    width: 700px;
+    height: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Chat container */
+  .ChatContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  /* Message list container */
+  .MessageList {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  
+  /* Message item */
+  .Message {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  
+    &.outgoing {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
+  
+  .Message-content {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
+  }
+  
+  /* Read Aloud button */
+  .ReadAloud-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .ReadAloud-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Message input */
+  .MessageInput {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+  
+    input {
+      flex-grow: 1;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+  
+    button {
+      background-color: #2196f3;
+      color: #fff;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+  
+  /* Typing indicator */
+  .TypingIndicator {
+    margin-top: 5px;
+    color: #aaa;
+  }
+  
