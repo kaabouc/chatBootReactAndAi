@@ -1,18 +1,8 @@
-// CSS (Chat.css)
-/* Read Aloud button */
-  
 // Chat.js
 import React, { useState, useRef, useEffect } from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
-import './Chat.css';
-import {
-  MainContainer,
-  ChatContainer,
-  MessageList,
-  Message,
-  MessageInput,
-  TypingIndicator,
-} from '@chatscope/chat-ui-kit-react';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import './Chat.css'; // Assurez-vous d'importer votre fichier CSS ici
 
 const API_KEY = "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";
 
@@ -21,9 +11,9 @@ const systemMessage = { role: "system", content: "Explain things like you're tal
 const Chat = () => {
   const [messages, setMessages] = useState([
     {
-      message: "Hello, I'm ChatGPT! Ask me anything!",
+      message: "Hello, I'm chatbot ! Ask me anything!",
       direction: 'incoming',
-      sender: "ChatGPT",
+      sender: "ChatBot",
     },
   ]);
 
@@ -92,31 +82,39 @@ const Chat = () => {
     messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const playSound = (text) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(utterance);
+  };
+
   return (
-    <div className="App">
-      <div style={{ position: "relative", height: "800px", width: "700px" }}>
-        <MainContainer>
-          <ChatContainer>
-            <MessageList
-              scrollBehavior="smooth"
-              typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
-            >
+    <Container className="chat-container">
+      <Row>
+        <Col md={10} className="mx-auto">
+          <div className="message-container">
+            <div className="message-list">
               {messages.map((message, i) => (
-                <Message key={i} model={message}>
-                  {message.direction === 'incoming' && (
-                    <button className="ReadAloud-btn" onClick={() => speak(message.message)}>
-                      🗣️ Read Aloud
-                    </button>
-                  )}
-                </Message>
+                <div key={i} className={`message ${message.direction}`}>
+                  {message.message}
+                  <span className="sound-icon" onClick={() => playSound(message.message)}>
+                    🔊
+                  </span>
+                </div>
               ))}
-            </MessageList>
-            <MessageInput placeholder="Type message here" onSend={handleSendMessage} />
-          </ChatContainer>
-        </MainContainer>
-      </div>
-      <div ref={messagesEndRef}></div>
-    </div>
+              <div ref={messagesEndRef}></div>
+            </div>
+          </div>
+          <Form onSubmit={(e) => { e.preventDefault(); handleSendMessage(e.target.message.value); }}>
+            <Form.Group controlId="messageForm">
+              <Form.Control type="text" name="message" placeholder="Type message here" />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Send
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
