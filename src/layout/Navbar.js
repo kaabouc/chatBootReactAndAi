@@ -31,7 +31,7 @@ function Navbar() {
           <nav class="main-nav">
           
             <Link  class="logo">
-              <img src="assets/images/logo-v1.png" alt=""/>
+              <img style={{width: "100px"}} src="assets/images/logo irisi.jpg" alt=""/>
             </Link>
            
             <ul class="nav">

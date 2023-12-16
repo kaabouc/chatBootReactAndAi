@@ -30,7 +30,7 @@ At IRSICHATBOT, we specialize in delivering comprehensive information and guidan
             </div>
             <div class="col-lg-6">
               <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img src="assets/images/slider-dec.png" alt=""/>
+                <img src="assets/images/chatbot1.jpeg" alt=""/>
               </div>
             </div>
           </div>
