@@ -132,63 +132,63 @@ const Chat = () => {
   };
 
   return (
-    <div className="wow fadeIn" id="top" data-wow-duration="1s" style={{ marginTop: "100px" }} data-wow-delay="0.5s">
-    <Container>
+    <div class=" wow fadeIn" id="top" data-wow-duration="1s" style={{marginTop:"100px"}} data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+    <Container className="chat-container  wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
       <Row>
-        <Col lg={12}>
-          <Row>
-            <Container className="chat-container wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
-              <Row>
-                <Col md={10} className="mx-auto">
-                  <div className="language-selector">
-                    <Button variant="outline-primary" onClick={() => handleLanguageChange('en')}>EN</Button>
-                    <Button variant="outline-primary" onClick={() => handleLanguageChange('fr')}>FR</Button>
-                    <Button variant="outline-primary" onClick={() => handleLanguageChange('es')}>ES</Button>
-                    <Button variant="outline-primary" onClick={() => handleLanguageChange('ar')}>AR</Button>
-                    {/* Add more buttons for each language */}
-                  </div>
-                  <div className="message-container">
-                    <div className="message-list">
-                      {messages.map((message, i) => (
-                        <div key={i} className={`message ${message.direction}`}>
-                          <div className="message-text">
-                            {message.message}
-                          </div>
-                          {message.direction === 'incoming' && (
-                            <div className="translation-selector">
-                              <span>Translate to:</span>
-                              <select className="form-control" onChange={(e) => handleTranslate(e, message)}>
-                                <option value="en">English</option>
-                                <option value="fr">French</option>
-                                <option value="es">Spanish</option>
-                                {/* Add more language options as needed */}
-                              </select>
-                            </div>
-                          )}
-                          <span className="sound-icon" onClick={() => playSound(message.message)}>
-                            🔊
-                          </span>
-                        </div>
-                      ))}
-                      <div ref={messagesEndRef}></div>
-                    </div>
-                  </div>
-                  <Form onSubmit={(e) => { e.preventDefault(); handleSendMessage(e.target.message.value); }}>
-                    <Form.Group controlId="messageForm">
-                      <Form.Control type="text" name="message" placeholder={t('typeMessage')} className="mb-2" />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                      {t('send')}
-                    </Button>
-                  </Form>
-                </Col>
-              </Row>
-            </Container>
-          </Row>
+        <Col md={10} className="mx-auto">
+          <div className="language-selector">
+            <Button onClick={() => handleLanguageChange('en')}>EN</Button>
+            <Button onClick={() => handleLanguageChange('fr')}>FR</Button>
+            <Button onClick={() => handleLanguageChange('es')}>ES</Button>
+            <Button onClick={() => handleLanguageChange('ar')}>AR</Button>
+            {/* Ajoutez d'autres boutons pour chaque langue */}
+          </div>
+          <div className="message-container">
+          <div className="message-list">
+  {messages.map((message, i) => (
+    <div key={i} className={`message ${message.direction}`}>
+      <div className="message-text">
+        {message.message}
+      </div>
+      {message.direction === 'incoming' && (
+        <div className="translation-selector">
+          <span>Translate to:</span>
+          <select onChange={(e) => handleTranslate(e, message)}>
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            {/* Add more language options as needed */}
+          </select>
+        </div>
+      )}
+      <span className="sound-icon" onClick={() => playSound(message.message)}>
+        🔊
+      </span>
+    </div>
+  ))}
+  <div ref={messagesEndRef}></div>
+</div>
+          </div>
+          <Form onSubmit={(e) => { e.preventDefault(); handleSendMessage(e.target.message.value); }}>
+            <Form.Group controlId="messageForm">
+              <Form.Control type="text" name="message" placeholder={t('typeMessage')} />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              {t('send')}
+            </Button>
+          </Form>
         </Col>
       </Row>
     </Container>
-  </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
   );
 };
 
