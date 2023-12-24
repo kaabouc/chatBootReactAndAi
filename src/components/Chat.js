@@ -6,7 +6,7 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import './Chat.css'; // Assurez-vous d'importer votre fichier CSS ici
 import { useTranslation } from 'react-i18next';
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 const systemMessage = { role: "system", content: "Explain things like you're talking to a software professional with 2 years of experience." };
 
@@ -28,6 +28,8 @@ const Chat = () => {
     scrollToBottom();
   }, [messages]);
 
+
+  
   const handleSendMessage = async (message) => {
     const newMessage = {
       message,
@@ -109,7 +111,7 @@ const Chat = () => {
     const utterance = new SpeechSynthesisUtterance(text);
     window.speechSynthesis.speak(utterance);
   };
-
+  
   const scrollToBottom = () => {
     messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
   };

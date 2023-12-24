@@ -9,6 +9,7 @@ import About from './page/About_page';
 import Home from './page/Home_page';
 import Contact from './page/Contact_page';
 import Footer from './layout/Footer';
+import Chatbot from './components/Chatbot';
 function App() {
   return (
     <Router>
@@ -21,7 +22,7 @@ function App() {
           <Route path="/about" element={<About/>} />
           <Route path="/service" element={<Service/>} />
           <Route path="/contact" element={<Contact/>} />
-          <Route path="/chatbot" element={<Chat/>} />
+          <Route path="/chatbot" element={<Chatbot/>} />
         </Routes>
         <Footer/>
       </div>
