@@ -4,10 +4,10 @@ export default function Footer() {
   return (
     <footer>
     <div className="container">
-      <div className="row">
+      <div className="row" style={{ fontFamily:"normale"}}>
         <div className="col-lg-12">
-          <p>Copyright © 2022 DigiMedia Co., Ltd. All Rights Reserved. 
-          <br/>Design: <a href="#" target="_parent" title="free css templates">TemplateMo</a></p>
+          <p style={{ fontSize: '20px' }}>Copyright © 2023, by ait lhaj and kaabouch
+          <br/>Design: <a href="https://www.irisi-club.ma/" target="_parent" title="free css templates">irisi</a></p>
         </div>
       </div>
     </div>

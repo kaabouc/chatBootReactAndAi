@@ -92,18 +92,26 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div style={{ margin:"100px"}} data-wow-duration="1s" data-wow-delay="0.5s">
+<div className="container mt-4">
+  <div className="card">
+    <div className="card-body">
+      <h1 className="mb-4">Chatbot d'Assistance</h1>
+      
+    </div>
+  </div>
+</div>    <div className="container mt-4">
       <div className="card">
         <div className="card-body">
           <div
             className="chat-container"
-            style={{
-              backgroundColor: '#f0f0f0',
-              padding: '15px',
-              borderRadius: '8px',
-              maxHeight: '400px',
-              overflowY: 'auto',
-            }}
+          style={{
+          backgroundColor: '#f0f0f0',
+          padding: '15px',
+          borderRadius: '8px',
+          maxHeight: '400px',
+          overflowY: 'auto',
+        }}
           >
             <div className="message-container">
               {chatHistory.map((entry, index) => (
@@ -120,7 +128,8 @@ const Chatbot = () => {
                 </div>
               ))}
             </div>
-            <div className="input-container">
+            </div>
+            <div className="input-container" style={{}}>
               <input
                 type="text"
                 value={userInput}
@@ -143,9 +152,10 @@ const Chatbot = () => {
                 <option value="es-ES">Spanish</option>
               </select>
             </div>
-          </div>
+          
         </div>
       </div>
+    </div>
     </div>
   );
 };

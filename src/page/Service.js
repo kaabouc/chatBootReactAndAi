@@ -16,8 +16,9 @@ export default function service() {
                 <div class="row">
                   <div class="col-lg-12">
                     <h6> IRSI Chatbot</h6>
-                    <h2> your dedicated platform </h2>
-                    <p>Our cutting-edge chatbot service offers comprehensive information on database administration. Get insights into database management, optimization techniques, security protocols, and more.</p>
+                    <h2> Nos Services</h2>
+                    <p>Le chatbot prend en charge la réception simultanée de messages par la voix et le texte. Les utilisateurs peuvent
+                       alterner entre ces deux modes de communication sans interruption, offrant une expérience conversationnelle fluide.</p>
                   </div>
                   <div class="col-lg-12">
                     <div class="border-first-button scroll-to-section">
@@ -40,32 +41,18 @@ export default function service() {
   </div>
 
   <div class="container mt-5">
-  <div >
-    <h1 class="display-7">Welcome to IRSICHATBOT - Your Gateway to Database Administration Knowledge!</h1>
-    <p class="lead">Embark on a journey of database mastery with IRSICHATBOT, your dedicated source for comprehensive insights into the world of database administration...</p>
+  <h1 className="mb-4">more services</h1>
+      <p> Envoi de Messages :
+
+Par la Voix : Les utilisateurs ont désormais la possibilité de poser des questions par la voix. En utilisant la reconnaissance vocale, ils peuvent simplement prononcer leurs questions, et le chatbot les interprétera.
+Par le Texte : Les utilisateurs peuvent également poser des questions en utilisant le champ de saisie de texte. Cette approche offre une flexibilité totale, permettant aux utilisateurs de choisir la méthode qui leur convient le mieux.</p>
+      <p>
+L'application a récemment évolué pour permettre l'envoi de messages par la voix ou le texte, offrant une flexibilité d'interaction. Cependant, la fonctionnalité de stockage des messages dans la base de données est en cours de développement pour garantir une préservation sécurisée des échanges. Nous travaillons activement sur cette amélioration pour assurer une expérience utilisateur complète, tout en prenant en charge la réception simultanée de messages vocaux et textuels, notamment en français, pour une communication plus fluide et personnalisée.
 
 
-    <p>What makes IRSICHATBOT stand out is our unwavering commitment to delivering user-friendly, easily accessible information...</p>
-
-  
-    <ul>
-      <li>Database Design Principles</li>
-      <li>Query Optimization Techniques</li>
-      <li>Data Security Measures</li>
-      <li>Performance Tuning Strategies</li>
-      <li>Troubleshooting and Maintenance Tips</li>
-      <li>Latest Trends and Innovations in Database Technologies</li>
-    </ul>
-
- 
-    <p>With IRSICHATBOT, learning about database administration transforms into an interactive and engaging experience...</p>
 
 
-    <p>Stay abreast of the ever-evolving landscape of database administration by joining our vibrant community...</p>
-
-  
-    <p class="lead">Experience the convenience and depth of knowledge that IRSICHATBOT offers, and unlock your potential in the world of database administration today!</p>
-  </div>
+</p>
 </div>
  
   </div>
