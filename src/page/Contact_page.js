@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from '../layout/Navbar'
 
 export default function Contact() {
   return (
+    
     <div>
+       <Navbar />
        <div id="contact" class="contact-us section">
     <div class="container">
       <div class="row">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaMicrophone, FaMicrophoneSlash, FaUser, FaRobot } from 'react-icons/fa';
+import Navbar from '../layout/Navbar';
 
 const Chatbot = () => {
   const [userInput, setUserInput] = useState('');
@@ -92,42 +93,44 @@ const Chatbot = () => {
   };
 
   return (
-    <div style={{ margin:"100px"}} data-wow-duration="1s" data-wow-delay="0.5s">
-<div className="container mt-4">
-  <div className="card">
-    <div className="card-body">
-      <h1 className="mb-4">Chatbot d'Assistance</h1>
-      
-    </div>
-  </div>
-</div>    <div className="container mt-4">
-      <div className="card">
-        <div className="card-body">
-          <div
-            className="chat-container"
-          style={{
-          backgroundColor: '#f0f0f0',
-          padding: '15px',
-          borderRadius: '8px',
-          maxHeight: '400px',
-          overflowY: 'auto',
-        }}
-          >
-            <div className="message-container">
-              {chatHistory.map((entry, index) => (
-                <div
-                  key={index}
-                  className={`message ${entry.type === 'user' ? 'alert alert-primary user-message' : 'alert alert-success bot-message'} mb-2 p-2`}
-                >
-                  {entry.type === 'user' ? (
-                    <span className="message-icon"><FaUser /></span>
-                  ) : (
-                    <span className="message-icon"><FaRobot /></span>
-                  )}
-                  {entry.message}
-                </div>
-              ))}
-            </div>
+    <div>       <Navbar />
+
+    <div style={{ margin: "100px" }} data-wow-duration="1s" data-wow-delay="0.5s">
+      <div className="container mt-4">
+        <div className="card">
+          <div className="card-body">
+            <h1 className="mb-4">Chatbot d'Assistance</h1>
+
+          </div>
+        </div>
+      </div>    <div className="container mt-4">
+        <div className="card">
+          <div className="card-body">
+            <div
+              className="chat-container"
+              style={{
+                backgroundColor: '#f0f0f0',
+                padding: '15px',
+                borderRadius: '8px',
+                maxHeight: '400px',
+                overflowY: 'auto',
+              }}
+            >
+              <div className="message-container">
+                {chatHistory.map((entry, index) => (
+                  <div
+                    key={index}
+                    className={`message ${entry.type === 'user' ? 'alert alert-primary user-message' : 'alert alert-success bot-message'} mb-2 p-2`}
+                  >
+                    {entry.type === 'user' ? (
+                      <span className="message-icon"><FaUser /></span>
+                    ) : (
+                      <span className="message-icon"><FaRobot /></span>
+                    )}
+                    {entry.message} 
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="input-container" style={{}}>
               <input
@@ -152,7 +155,8 @@ const Chatbot = () => {
                 <option value="es-ES">Spanish</option>
               </select>
             </div>
-          
+
+          </div>
         </div>
       </div>
     </div>

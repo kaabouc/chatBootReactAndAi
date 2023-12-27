@@ -10,12 +10,17 @@ import Home from './page/Home_page';
 import Contact from './page/Contact_page';
 import Footer from './layout/Footer';
 import Chatbot from './components/Chatbot';
+import Login from './page/Login_User';
+import ListQst from './components/admin/ListQst';
+import ListReponse from './components/admin/reponse/ListReponse';
 function App() {
+
+
   return (
     <Router>
 
       <div className="App">
-        <Navbar />
+     
      
         <Routes>
           <Route path="/" element={<Home/>} />
@@ -23,11 +28,13 @@ function App() {
           <Route path="/service" element={<Service/>} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/chatbot" element={<Chatbot/>} />
+          <Route path="/listQst" element={<ListQst/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/test" element={<ListReponse/>} />
+
         </Routes>
-        <Footer/>
       </div>
     </Router>
   );
 }
-
 export default App;
