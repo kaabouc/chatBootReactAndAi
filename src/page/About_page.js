@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../layout/Navbar'
+import Footer from '../layout/Footer'
 
 export default function about() {
   return (
@@ -67,7 +68,8 @@ export default function about() {
     <p class="lead">Experience the convenience and depth of knowledge that IRSICHATBOT offers, and unlock your potential in the world of database administration today!</p>
   </div>
 </div>
- 
+<Footer/>
+
   </div>
   )
 }

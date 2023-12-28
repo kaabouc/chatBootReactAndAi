@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Navbar from '../layout/Navbar'
+import Footer from '../layout/Footer'
 
 export default function service() {
   return (
     <div>
   
-    
+  <Navbar />
+
     <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="container">
       <div class="row">
@@ -54,7 +57,7 @@ L'application a récemment évolué pour permettre l'envoi de messages par la vo
 
 </p>
 </div>
- 
+ <Footer/>
   </div>
  
   )

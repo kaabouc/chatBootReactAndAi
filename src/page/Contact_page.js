@@ -1,5 +1,7 @@
 import React from 'react'
 import Navbar from '../layout/Navbar'
+import Footer from '../layout/Footer'
+import ContactAdd from '../components/admin/contact/ContactAdd'
 
 export default function Contact() {
   return (
@@ -56,17 +58,7 @@ export default function Contact() {
                         </div>
                       </div>
                     </div>
-                   
-                    <div class="col-lg-12">
-                      <fieldset>
-                        
-                      <h3 style={{ fontFamily: "monospace" , color:"blue"}}>
-                    "IRSICHATBOT is here to assist you every step of the way."<br />
-                    "If you have any issues, you can contact us via email or phone number."
-                  </h3>
-
-                      </fieldset>
-                    </div>
+                    <ContactAdd/>
                   </div>
                 </div>
               </div>
@@ -76,6 +68,8 @@ export default function Contact() {
       </div>
     </div>
   </div>
+  <Footer/>
+
     </div>
   )
 }

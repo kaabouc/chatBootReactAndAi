@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function SideNave() {
   return (
@@ -28,28 +29,30 @@ export default function SideNave() {
           <a href="#" className="nav-link active">
             <i className="nav-icon fas fa-tachometer-alt" />
             <p>
+              <Link to='/reponse'>Reponse</Link>
               
-              Dashboard
+              
               <i className="right fas fa-angle-left" />
             </p>
           </a>
-          <ul className="nav nav-treeview">
-            <li className="nav-item">
-              <a href="./index.html" className="nav-link active">
-                <i className="far fa-circle nav-icon" />
-                <p>Dashboard v1</p>
-              </a>
-            </li>
-            
-          </ul>
+          
         </li>
-       
+        <li >
+          <a href="#" className="nav-link active">
+            <i className="nav-icon fas fa-tachometer-alt" />
+            <p>
+              <Link to='/contact_login'>contact</Link>
+              
+              
+              <i className="right fas fa-angle-left" />
+            </p>
+          </a>
+          
+        </li>
       
       </ul>
     </nav>
-    {/* /.sidebar-menu */}
   </div>
-  {/* /.sidebar */}
 </aside>
 </div>
   )

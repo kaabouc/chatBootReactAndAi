@@ -8,7 +8,7 @@ export default function ListQst() {
   return (
     <div>
         <Header/>
-        <SideNave/>
+        <SideNave/> 
         <Home/>
         <Footer/>
         </div>

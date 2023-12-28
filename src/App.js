@@ -13,6 +13,8 @@ import Chatbot from './components/Chatbot';
 import Login from './page/Login_User';
 import ListQst from './components/admin/ListQst';
 import ListReponse from './components/admin/reponse/ListReponse';
+import ContactList from './components/admin/contact/ContactList';
+import ContactAdd from './components/admin/contact/ContactAdd';
 function App() {
 
 
@@ -30,7 +32,10 @@ function App() {
           <Route path="/chatbot" element={<Chatbot/>} />
           <Route path="/listQst" element={<ListQst/>} />
           <Route path="/login" element={<Login/>} />
-          <Route path="/test" element={<ListReponse/>} />
+          <Route path="/contact_login" element={<ContactList/>} />
+          <Route path="/contact_add" element={<ContactAdd/>} />
+
+          <Route path="/reponse" element={<ListReponse/>} />
 
         </Routes>
       </div>

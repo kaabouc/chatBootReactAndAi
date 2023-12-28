@@ -21,7 +21,7 @@ function Login() {
         localStorage.setItem("userId", response.data.id);
         // Redirect to another page or perform other actions upon successful login
         // Example: Redirect to the questionnaire page
-        window.location.href = "/chatbot";
+        window.location.href = "/reponse";
       } else {
         // Handle login failure
         console.log("Login failed");
@@ -50,39 +50,45 @@ function Login() {
   };
 
   return (
-    <div className="wrapper container d-flex flex-column justify-content-between align-items-between mt-5 ">
-      <div className="form-wrapper sign-in ">
-        <form onSubmit={handleLogin}>
-          <h2>Login</h2>
-          <div className="input-group">
-            <input
-              type="text"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="username"
-            />
+    <div className="container mt-5">
+    <div className="row justify-content-center">
+      <div className="col-md-6">
+        <div className="card">
+          <div className="card-body">
+            <h2 className="card-title text-center mb-4">Login</h2>
+            <form onSubmit={handleLogin}>
+              <div className="mb-3">
+                <label htmlFor="username" className="form-label">Username</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="username"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Enter your username"
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label">Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                  required
+                />
+              </div>
+              <button type="submit" className="btn btn-primary w-100">Login</button>
+              {error && <p className="text-danger mt-3">{error}</p>}
+            </form>
           </div>
-          <div className="input-group">
-            <input
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="password"
-            />
-          </div>
-          <button type="submit">Login</button>
-          {error && <p className="error-message">{error}</p>}
-          <div className="signUp-link">
-            <p>
-              Don't have an account? <a href="#" className="signUpBtn-link" onClick={toggleForm}>Sign Up</a>
-            </p>
-          </div>
-        </form>
+        </div>
       </div>
-      {/* Add the sign-up form or other components if needed */}
     </div>
+  </div>
   );
 }
 
