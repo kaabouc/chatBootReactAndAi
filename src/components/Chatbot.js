@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaMicrophone, FaMicrophoneSlash, FaUser, FaRobot } from 'react-icons/fa';
 import Navbar from '../layout/Navbar';
+import Footer from '../layout/Footer';
 
 const Chatbot = () => {
   const [userInput, setUserInput] = useState('');
@@ -93,74 +94,74 @@ const Chatbot = () => {
   };
 
   return (
-    <div>       <Navbar />
-
-    <div style={{ margin: "100px" }} data-wow-duration="1s" data-wow-delay="0.5s">
-      <div className="container mt-4">
-        <div className="card">
-          <div className="card-body">
-            <h1 className="mb-4">Chatbot d'Assistance</h1>
-
-          </div>
-        </div>
-      </div>    <div className="container mt-4">
-        <div className="card">
-          <div className="card-body">
-            <div
-              className="chat-container"
-              style={{
-                backgroundColor: '#f0f0f0',
-                padding: '15px',
-                borderRadius: '8px',
-                maxHeight: '400px',
-                overflowY: 'auto',
-              }}
-            >
+    <div className="container-fluid bg-dark text-white" >
+      <Navbar />
+      <div className="row mt-4">
+        <div className="col-md-8 offset-md-2">
+          <div className="card border-primary rounded-lg mb-3">
+            <div className="card-header" style={{background:'rgb(52, 58, 64)'}}>
+              <h1 className="display-4" style={{ paddingTop : '80px', color:'white', fontFamily :'normale' , textAlign:'center' }} > <b>Chatbot d'Assistance</b></h1>
+            </div>
+            <div className="card-body bg-dark text-white">
               <div className="message-container">
                 {chatHistory.map((entry, index) => (
                   <div
                     key={index}
-                    className={`message ${entry.type === 'user' ? 'alert alert-primary user-message' : 'alert alert-success bot-message'} mb-2 p-2`}
+                    className={`message bg-dark text-white ${entry.type === "user" ? "bg-light border rounded-pill p-3 text-primary" : "bg-light border rounded-pill p-3 text-success"}`}
                   >
-                    {entry.type === 'user' ? (
+                    {entry.type === "user" ? (
                       <span className="message-icon"><FaUser /></span>
                     ) : (
                       <span className="message-icon"><FaRobot /></span>
                     )}
-                    {entry.message} 
+                    {entry.message}
                   </div>
                 ))}
               </div>
+              <div className="input-group mb-3">
+                <input
+                  type="text"
+                  value={userInput}
+                  onChange={handleInputChange}
+                  className="form-control bg-dark text-white"
+                  placeholder="Posez une question..."
+                />
+                <button
+                  onClick={handleSubmit}
+                  className="btn btn-outline-primary"
+                >
+                  Envoyer
+                </button>
+                <button
+                  onClick={listening ? stopListening : startListening}
+                  className={`btn btn-outline-primary btn-sm ${listening ? "active" : ""}`}
+                >
+                  {listening ? <FaMicrophoneSlash /> : <FaMicrophone />}
+                  {" "}
+                  {listening ? "Arrêter la dictée vocale" : "Démarrer la dictée vocale"}
+                </button>
+                <button
+                  onClick={stopListening}
+                  className="btn btn-outline-danger btn-sm"
+                >
+                  Arrêter et Effacer
+                </button>
+                <select
+                  className="form-control ml-2 bg-dark text-white"
+                  value={selectedLanguage}
+                  onChange={(e) => setSelectedLanguage(e.target.value)}
+                >
+                  <option value="fr-FR">Français</option>
+                  <option value="en-US">Anglais</option>
+                  <option value="es-ES">Espagnol</option>
+                </select>
+              </div>
             </div>
-            <div className="input-container" style={{}}>
-              <input
-                type="text"
-                value={userInput}
-                onChange={handleInputChange}
-                className="form-control mr-2"
-                placeholder="Posez une question..."
-              />
-              <button onClick={handleSubmit} className="btn btn-primary">Envoyer</button>
-              <button onClick={listening ? stopListening : startListening} className={`btn btn-secondary ml-2 ${listening ? 'active' : ''}`}>
-                {listening ? <FaMicrophoneSlash /> : <FaMicrophone />}
-                {' '}
-                {listening ? 'Arrêter la dictée vocale' : 'Démarrer la dictée vocale'}
-              </button>
-              <button onClick={stopListening} className="btn btn-danger ml-2">
-                Arrêter et Effacer
-              </button>
-              <select className="form-control ml-2" value={selectedLanguage} onChange={(e) => setSelectedLanguage(e.target.value)}>
-                <option value="fr-FR">French</option>
-                <option value="en-US">English</option>
-                <option value="es-ES">Spanish</option>
-              </select>
-            </div>
-
           </div>
         </div>
       </div>
-    </div>
-    </div>
+      <Footer/>
+      </div>
   );
 };
 

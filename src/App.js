@@ -15,6 +15,7 @@ import ListQst from './components/admin/ListQst';
 import ListReponse from './components/admin/reponse/ListReponse';
 import ContactList from './components/admin/contact/ContactList';
 import ContactAdd from './components/admin/contact/ContactAdd';
+import Errore from './page/Error_page';
 function App() {
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/contact_login" element={<ContactList/>} />
           <Route path="/contact_add" element={<ContactAdd/>} />
+          <Route path="*" element={<Errore/>} />
 
           <Route path="/reponse" element={<ListReponse/>} />
 

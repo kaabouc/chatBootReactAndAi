@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function SideNave() {
   return (
-    <div>{/* Main Sidebar Container */}
+    <div > {/* Main Sidebar Container */}
 <aside className="main-sidebar sidebar-dark-primary elevation-4">
   {/* Brand Logo */}
   <a href="index3.html" className="brand-link">
